@@ -3,6 +3,7 @@ import styled from "styled-components";
 import NavIconBell from "../../assets/bell.svg";
 import HeaderLogo from "../../assets/musinsa_logo.png";
 import NavIcon from "../../assets/navIcon.svg";
+import Input from "../common/Input";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -129,9 +130,15 @@ export default function Header() {
         style={{
           width: "100%",
           height: "36px",
-          border: "1px solid yellow",
         }}
-      ></div>
+      >
+        <Input
+          width="100%"
+          height="36px"
+          placeholder="뷰티위크 최대 25% 쿠폰"
+          onSearch={(q) => console.log("검색:", q)}
+        />
+      </div>
     </HeaderWrapper>
   );
 }
