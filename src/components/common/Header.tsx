@@ -21,6 +21,46 @@ const HeaderWrapper = styled.header`
   font-size: ${(props) => props.theme.fontSize.base};
 `;
 
+const HeaderNavWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const HeaderMainNav = styled.div`
+  padding: 20px 0px;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+const HeaderSubNav = styled.div`
+  padding: 20px 0px;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+`;
+
+const HeaderLogoWrapper = styled.div`
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  padding: 12px 0px;
+`;
+
+const HeaderInputWrapper = styled.div`
+  width: 100%;
+  height: 36px;
+`;
+
+const HeaderTabWrapper = styled.div``;
+
 const HeaderLine = styled.div`
   width: 1px;
   height: 16px;
@@ -49,34 +89,13 @@ const subMenuList = [
   { label: "장바구니", path: "/" },
 ];
 
-// const tabItems = [
-//   { label: "추천", value: "추천" },
-//   { label: "추천", value: "추천" },
-//   { label: "추천", value: "추천" },
-//   { label: "추천", value: "추천" },
-// ];
-
 export default function Header() {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <HeaderWrapper>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div
-          style={{
-            padding: "20px 0px",
-            width: "100%",
-            height: "55px",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-          }}
-        >
+      <HeaderNavWrapper>
+        <HeaderMainNav>
           <img src={NavIcon} alt="nav icon" />
           <HeaderLine />
           {mainMenuList.map((item, index) => (
@@ -86,19 +105,9 @@ export default function Header() {
           ))}
           <HeaderLine />
           <MenuStyledLink to="/">(S)SNAP</MenuStyledLink>
-        </div>
+        </HeaderMainNav>
 
-        <div
-          style={{
-            padding: "20px 0px",
-            width: "100%",
-            height: "55px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "end",
-            gap: "8px",
-          }}
-        >
+        <HeaderSubNav style={{}}>
           <MenuStyledLink to="/" style={{ fontSize: "14px" }}>
             오프라인 스토어
           </MenuStyledLink>
@@ -112,19 +121,10 @@ export default function Header() {
               {item.label}
             </MenuStyledLink>
           ))}
-        </div>
-      </div>
+        </HeaderSubNav>
+      </HeaderNavWrapper>
 
-      <div
-        style={{
-          width: "100%",
-          height: "52px",
-          display: "flex",
-          alignContent: "center",
-          justifyContent: "space-between",
-          padding: "12px 0px",
-        }}
-      >
+      <HeaderLogoWrapper>
         <img
           src={HeaderLogo}
           alt="logo"
@@ -135,23 +135,18 @@ export default function Header() {
           alt="nav icon_bell"
           style={{ width: "auto", height: "20px" }}
         />
-      </div>
+      </HeaderLogoWrapper>
 
-      <div
-        style={{
-          width: "100%",
-          height: "36px",
-        }}
-      >
+      <HeaderInputWrapper style={{}}>
         <Input
           width="100%"
           height="36px"
           placeholder="뷰티위크 최대 25% 쿠폰"
           onSearch={(q) => console.log("검색:", q)}
         />
-      </div>
+      </HeaderInputWrapper>
 
-      <div>
+      <HeaderTabWrapper>
         <CommonTabs
           items={[
             { text: "추천" },
@@ -163,7 +158,7 @@ export default function Header() {
           value={tabIndex}
           selectedTab={setTabIndex}
         />
-      </div>
+      </HeaderTabWrapper>
     </HeaderWrapper>
   );
 }
