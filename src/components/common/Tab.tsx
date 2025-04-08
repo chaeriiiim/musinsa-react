@@ -47,6 +47,10 @@ const TabStyle = styled(Tab)`
     &:hover {
       opacity: 1;
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 `;
 
@@ -62,7 +66,12 @@ const CommonTabs: React.FC<CommonTabsProps> = ({
   return (
     <TabsStyle value={value} onChange={handleChange}>
       {items.map((item, index) => (
-        <TabStyle key={index} label={item.text} disableRipple />
+        <TabStyle
+          key={index}
+          label={item.text}
+          disableRipple
+          disableFocusRipple
+        />
       ))}
     </TabsStyle>
   );
