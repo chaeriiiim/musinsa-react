@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import NavIconBell from "../../assets/bell.svg";
+import HeaderLogo from "../../assets/musinsa_logo.png";
 import NavIcon from "../../assets/navIcon.svg";
 
 const HeaderWrapper = styled.header`
@@ -47,7 +49,12 @@ export default function Header() {
 
   return (
     <HeaderWrapper>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <div
           style={{
             padding: "20px 0px",
@@ -96,7 +103,35 @@ export default function Header() {
         </div>
       </div>
 
-      <div style={{ width: "100px", height: "52px" }}></div>
+      <div
+        style={{
+          width: "100%",
+          height: "52px",
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "space-between",
+          padding: "12px 0px",
+        }}
+      >
+        <img
+          src={HeaderLogo}
+          alt="logo"
+          style={{ width: "auto", height: "20px" }}
+        />
+        <img
+          src={NavIconBell}
+          alt="nav icon_bell"
+          style={{ width: "auto", height: "20px" }}
+        />
+      </div>
+
+      <div
+        style={{
+          width: "100%",
+          height: "36px",
+          border: "1px solid yellow",
+        }}
+      ></div>
     </HeaderWrapper>
   );
 }
