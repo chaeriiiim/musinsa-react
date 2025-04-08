@@ -14,6 +14,7 @@ const HeaderWrapper = styled.header`
   padding: 0 16px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: ${(props) => props.theme.fontSize.base};
 `;
 
 const HeaderNav = styled.div`
@@ -33,20 +34,20 @@ const HeaderLine = styled.div`
 `;
 
 const NavigationList = styled.ul`
-  list-style: none; /* 기본 리스트 스타일 제거 */
+  list-style: none;
   padding: 0;
   margin: 0;
-  display: flex; /* flexbox로 변경 */
-  gap: 16px; /* li들 사이 간격 설정 */
+  display: flex;
+  gap: 16px;
 `;
 
 const NavItem = styled.li`
-  display: inline-block; /* li 요소가 가로로 나열되도록 */
+  display: inline-block;
 `;
 
 const NavLink = styled.a`
-  text-decoration: none; /* 기본 밑줄 제거 */
-  color: inherit; /* 부모 요소의 텍스트 색상 상속 */
+  text-decoration: none;
+  color: inherit;
 `;
 
 export default function Header() {
