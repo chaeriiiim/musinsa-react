@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import Footer from "./components/common/Footer";
 import Header from "./components/common/Header";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Header />
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
