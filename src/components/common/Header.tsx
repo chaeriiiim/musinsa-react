@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NavIconBell from "../../assets/bell.svg";
 import HeaderLogo from "../../assets/musinsa_logo.png";
 import NavIcon from "../../assets/navIcon.svg";
 import Input from "../common/Input";
+import CommonTabs from "./Tab";
 
 const HeaderWrapper = styled.header`
   position: fixed;
@@ -30,23 +32,32 @@ const MenuStyledLink = styled(Link)`
   font-weight: bold;
 `;
 
-export default function Header() {
-  const mainMenuList = [
-    { label: "MUSINSA", path: "/" },
-    { label: "BEAUTY", path: "/" },
-    { label: "PLAYER", path: "/" },
-    { label: "OUTLET", path: "/" },
-    { label: "BOUTIQUE", path: "/" },
-    { label: "SNAKERS", path: "/" },
-    { label: "KIDS", path: "/" },
-  ];
+const mainMenuList = [
+  { label: "MUSINSA", path: "/" },
+  { label: "BEAUTY", path: "/" },
+  { label: "PLAYER", path: "/" },
+  { label: "OUTLET", path: "/" },
+  { label: "BOUTIQUE", path: "/" },
+  { label: "SNAKERS", path: "/" },
+  { label: "KIDS", path: "/" },
+];
 
-  const subMenuList = [
-    { label: "검색", path: "/" },
-    { label: "좋아요", path: "/" },
-    { label: "마이", path: "/" },
-    { label: "장바구니", path: "/" },
-  ];
+const subMenuList = [
+  { label: "검색", path: "/" },
+  { label: "좋아요", path: "/" },
+  { label: "마이", path: "/" },
+  { label: "장바구니", path: "/" },
+];
+
+// const tabItems = [
+//   { label: "추천", value: "추천" },
+//   { label: "추천", value: "추천" },
+//   { label: "추천", value: "추천" },
+//   { label: "추천", value: "추천" },
+// ];
+
+export default function Header() {
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
     <HeaderWrapper>
@@ -137,6 +148,20 @@ export default function Header() {
           height="36px"
           placeholder="뷰티위크 최대 25% 쿠폰"
           onSearch={(q) => console.log("검색:", q)}
+        />
+      </div>
+
+      <div>
+        <CommonTabs
+          items={[
+            { text: "추천" },
+            { text: "랭킹" },
+            { text: "세일" },
+            { text: "신상" },
+            { text: "브랜드" },
+          ]}
+          value={tabIndex}
+          selectedTab={setTabIndex}
         />
       </div>
     </HeaderWrapper>

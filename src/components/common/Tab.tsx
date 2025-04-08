@@ -1,42 +1,71 @@
-import { Tab as MuiTab, Tabs } from "@mui/material";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import React from "react";
 import styled from "styled-components";
 
 interface TabItem {
-  label: string;
-  value: string | number;
+  text: string;
 }
 
-interface CustomTabProps {
-  tabs: TabItem[];
-  value: string | number;
-  onChange: (value: string | number) => void;
-  width?: string;
+interface CommonTabsProps {
+  items: TabItem[];
+  value: number;
+  selectedTab: (newValue: number) => void;
 }
 
-const Wrapper = styled.div<{ width?: string }>`
-  width: ${(props) => props.width || "100%"};
+const TabsStyle = styled(Tabs)`
+  &.MuiTabs-root {
+    min-height: auto;
+  }
+
+  & .MuiTabs-indicator {
+    background-color: #ffffff;
+    height: 2px;
+  }
+
+  & .MuiTabs-flexContainer {
+    justify-content: flex-start;
+    gap: 8px;
+  }
 `;
 
-const CustomTab: React.FC<CustomTabProps> = ({
-  tabs,
+const TabStyle = styled(Tab)`
+  &.MuiButtonBase-root {
+    color: #a3a4a5;
+    font-size: ${(props) => props.theme.fontSize.md};
+    font-weight: bold;
+    padding: 6px 0px;
+    min-width: auto;
+    // min-height: auto;
+    line-height: 1;
+    text-transform: none;
+
+    &.Mui-selected {
+      color: #ffffff;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+`;
+
+const CommonTabs: React.FC<CommonTabsProps> = ({
+  items,
   value,
-  onChange,
-  width,
+  selectedTab,
 }) => {
-  const handleChange = (_: React.SyntheticEvent, newValue: string | number) => {
-    onChange(newValue);
+  const handleChange = (_: React.SyntheticEvent, newValue: number) => {
+    selectedTab(newValue);
   };
 
   return (
-    <Wrapper width={width}>
-      <Tabs value={value} onChange={handleChange}>
-        {tabs.map((tab) => (
-          <MuiTab key={tab.value} label={tab.label} value={tab.value} />
-        ))}
-      </Tabs>
-    </Wrapper>
+    <TabsStyle value={value} onChange={handleChange}>
+      {items.map((item, index) => (
+        <TabStyle key={index} label={item.text} disableRipple />
+      ))}
+    </TabsStyle>
   );
 };
 
-export default CustomTab;
+export default CommonTabs;
