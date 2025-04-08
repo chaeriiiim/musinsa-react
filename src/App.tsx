@@ -1,3 +1,4 @@
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/common/Header";
 import GlobalStyle from "./styles/GlobalStyle";
@@ -7,10 +8,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
-      <div style={{ paddingTop: "80px" }}>
-        <h2>콘텐츠</h2>
-      </div>
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

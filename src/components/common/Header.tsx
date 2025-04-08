@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NavIcon from "../../assets/navIcon.svg";
 
@@ -9,71 +10,93 @@ const HeaderWrapper = styled.header`
   width: 1440px;
   height: 192px;
   background-color: #1a1b1f;
-  display: flex;
-  align-items: center;
   padding: 0 16px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-size: ${(props) => props.theme.fontSize.base};
 `;
 
-const HeaderNav = styled.div`
-  width: 100%;
-  height: 55px;
-  padding: 12px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
 const HeaderLine = styled.div`
   width: 1px;
   height: 16px;
-  background-color: #767679;
-  margin-left: 8px;
+  background: #767679;
+  margin: 0px 4px;
 `;
 
-const NavigationList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 16px;
-`;
-
-const NavItem = styled.li`
-  display: inline-block;
-`;
-
-const NavLink = styled.a`
-  text-decoration: none;
-  color: inherit;
+const MenuStyledLink = styled(Link)`
+  font-weight: bold;
 `;
 
 export default function Header() {
+  const mainMenuList = [
+    { label: "MUSINSA", path: "/" },
+    { label: "BEAUTY", path: "/" },
+    { label: "PLAYER", path: "/" },
+    { label: "OUTLET", path: "/" },
+    { label: "BOUTIQUE", path: "/" },
+    { label: "SNAKERS", path: "/" },
+    { label: "KIDS", path: "/" },
+  ];
+
+  const subMenuList = [
+    { label: "검색", path: "/" },
+    { label: "좋아요", path: "/" },
+    { label: "마이", path: "/" },
+    { label: "장바구니", path: "/" },
+  ];
+
   return (
     <HeaderWrapper>
-      <HeaderNav>
-        <img src={NavIcon} alt="navIcon" />
-        <HeaderLine />
-        <NavigationList>
-          <NavItem>
-            <NavLink href="#">MUSINSA</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">BEAUTY</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">PLAYER</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">OUTLET</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">BOUTIQUE</NavLink>
-          </NavItem>
-        </NavigationList>
-      </HeaderNav>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            padding: "20px 0px",
+            width: "100%",
+            height: "55px",
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          <img src={NavIcon} alt="nav icon" />
+          <HeaderLine />
+          {mainMenuList.map((item, index) => (
+            <MenuStyledLink to={item.path} key={index}>
+              {item.label}
+            </MenuStyledLink>
+          ))}
+          <HeaderLine />
+          <MenuStyledLink to="/">(S)SNAP</MenuStyledLink>
+        </div>
+
+        <div
+          style={{
+            padding: "20px 0px",
+            width: "100%",
+            height: "55px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "end",
+            gap: "8px",
+          }}
+        >
+          <MenuStyledLink to="/" style={{ fontSize: "14px" }}>
+            오프라인 스토어
+          </MenuStyledLink>
+          <HeaderLine />
+          {subMenuList.map((item, index) => (
+            <MenuStyledLink
+              to={item.path}
+              key={index}
+              style={{ fontSize: "14px" }}
+            >
+              {item.label}
+            </MenuStyledLink>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ width: "100px", height: "52px" }}></div>
     </HeaderWrapper>
   );
 }
