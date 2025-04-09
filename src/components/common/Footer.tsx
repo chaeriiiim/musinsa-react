@@ -1,8 +1,14 @@
-// import styled from "styled-components";
+import styled from "styled-components";
+
+const FooterWrapper = styled.footer`
+  width: 100%;
+  height: 366px;
+  border: 1px solid red;
+`;
 
 export default function Footer() {
   return (
-    <footer
+    <FooterWrapper
       style={{
         width: "100%",
         height: "366px",
@@ -10,6 +16,6 @@ export default function Footer() {
         display: "flex",
         alignItems: "end",
       }}
-    ></footer>
+    ></FooterWrapper>
   );
 }
