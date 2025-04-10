@@ -9,27 +9,43 @@ const FooterWrapper = styled.footer`
 
 const FooterButtonWrapper = styled.div`
   height: 62px;
-  border: 1px solid black;
   margin: 0px 16px;
   padding: 5px 0px 24px 0px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1440px;
+    height: 1px;
+    background-color: #e6e6e6;
+    margin: 24px auto; /* 아래쪽에 여백을 주고, 가운데 정렬 */
+  }
 `;
 
+const FooterButton = styled.button`
+  height: 28px;
+  padding: 0px 10px;
+  background-color: #8a8a8a1a;
+  color: #666666;
+  margin-right: 5px;
+`;
+
+const buttonList = [
+  { label: "MUSINSA", path: "/" },
+  { label: "BEAUTY", path: "/" },
+  { label: "PLAYER", path: "/" },
+  { label: "OUTLET", path: "/" },
+  { label: "BOUTIQUE", path: "/" },
+  { label: "SNAKERS", path: "/" },
+  { label: "KIDS", path: "/" },
+];
 export default function Footer() {
   return (
     <FooterWrapper>
       <FooterButtonWrapper>
-        <div>
-          <button
-            style={{
-              height: "28px",
-              padding: "0px 10px",
-              backgroundColor: "#8a8a8a1a",
-              color: "#666666",
-            }}
-          >
-            MUSINSA
-          </button>
-        </div>
+        {buttonList.map((item, index) => (
+          <FooterButton key={index}>{item.label}</FooterButton>
+        ))}
       </FooterButtonWrapper>
     </FooterWrapper>
   );

@@ -107,7 +107,7 @@ export default function Header() {
           <MenuStyledLink to="/">(S)SNAP</MenuStyledLink>
         </HeaderMainNav>
 
-        <HeaderSubNav style={{}}>
+        <HeaderSubNav>
           <MenuStyledLink to="/" style={{ fontSize: "14px" }}>
             오프라인 스토어
           </MenuStyledLink>
