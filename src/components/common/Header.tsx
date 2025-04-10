@@ -8,10 +8,10 @@ import Input from "../common/Input";
 import CommonTabs from "./Tab";
 
 const HeaderWrapper = styled.header`
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
   width: 1440px;
   height: 192px;
   background-color: #1a1b1f;
