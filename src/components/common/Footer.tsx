@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Dropdown from "./DropdownButton";
 
 const FooterWrapper = styled.footer`
   width: 100%;
@@ -39,6 +40,9 @@ const buttonList = [
   { label: "SNAKERS", path: "/" },
   { label: "KIDS", path: "/" },
 ];
+
+const options = ["Option 1", "Option 2", "Option 3"];
+
 export default function Footer() {
   return (
     <FooterWrapper>
@@ -47,6 +51,9 @@ export default function Footer() {
           <FooterButton key={index}>{item.label}</FooterButton>
         ))}
       </FooterButtonWrapper>
+      <div>
+        <Dropdown options={options} />
+      </div>
     </FooterWrapper>
   );
 }
