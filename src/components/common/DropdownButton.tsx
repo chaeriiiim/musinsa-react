@@ -10,6 +10,7 @@ const DropdownButton = styled.button`
   padding: 8px 16px;
   background-color: #f0f0f0;
   cursor: pointer;
+  width: 1408px;
 `;
 
 const DropdownMenu = styled.ul`
@@ -17,7 +18,7 @@ const DropdownMenu = styled.ul`
   top: 100%;
   left: 0;
   background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   list-style: none;
   padding: 8px;
   margin: 0;

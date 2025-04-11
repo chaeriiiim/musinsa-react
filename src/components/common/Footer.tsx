@@ -19,7 +19,7 @@ const FooterButtonWrapper = styled.div`
     width: 1440px;
     height: 1px;
     background-color: #e6e6e6;
-    margin: 24px auto; /* 아래쪽에 여백을 주고, 가운데 정렬 */
+    margin: 24px auto;
   }
 `;
 
