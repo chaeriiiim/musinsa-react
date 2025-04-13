@@ -54,6 +54,7 @@ export default function Footer() {
       <div>
         <Dropdown options={options} />
       </div>
+      {/* 내용 추가 */}
     </FooterWrapper>
   );
 }
