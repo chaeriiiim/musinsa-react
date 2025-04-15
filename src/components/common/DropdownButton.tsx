@@ -58,7 +58,5 @@ const Dropdown = ({ options }: { options: string[] }) => {
     </DropdownWrapper>
   );
 };
-{
-  /* 내용 추가 */
-}
+
 export default Dropdown;
