@@ -65,17 +65,23 @@ import styled from "styled-components";
 const DropdownWrapper = styled.div`
   width: 100%;
   height: 36px;
-  background-color: #e6e6e6;
-  margin: 24px auto;
+  padding: 0px 14px;
+`;
+
+const DropdownButton = styled.button`
+  width: 100%;
+  height: 36px;
+  background-color: #f0f0f0;
   color: #666666;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `;
 
 const Dropdown = () => {
   return (
     <DropdownWrapper>
-      <button>
-        <p>사업자</p>
-      </button>
+      <DropdownButton>사업자</DropdownButton>
     </DropdownWrapper>
   );
 };

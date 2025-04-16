@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import Dropdown from "./DropdownButton";
+import Dropdown from "./DropdownButton";
 
 const FooterWrapper = styled.footer`
   width: 100%;
@@ -51,7 +51,9 @@ export default function Footer() {
           <FooterButton key={index}>{item.label}</FooterButton>
         ))}
       </FooterButtonWrapper>
-      <div>{/* <Dropdown options={options} /> */}</div>
+      <div>
+        <Dropdown />
+      </div>
     </FooterWrapper>
   );
 }
