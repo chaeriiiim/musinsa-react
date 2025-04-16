@@ -16,7 +16,7 @@ const FooterButtonWrapper = styled.div`
   &::after {
     content: "";
     display: block;
-    width: 1440px;
+    width: 100%;
     height: 1px;
     background-color: #e6e6e6;
     margin: 24px auto;
