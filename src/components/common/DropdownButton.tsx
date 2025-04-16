@@ -37,7 +37,10 @@ const DropdownItem = styled.li`
 const Dropdown = ({ options }: { options: string[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   const handleItemClick = (item: string) => {
     alert(`Selected : ${item}`);
     setIsOpen(false);
@@ -45,7 +48,12 @@ const Dropdown = ({ options }: { options: string[] }) => {
 
   return (
     <DropdownWrapper>
-      <DropdownButton onClick={toggleDropdown}>Select Option</DropdownButton>
+      {options.map((item, index) => (
+        <DropdownButton key={index} onClick={toggleDropdown}>
+          {item}
+        </DropdownButton>
+      ))}
+
       {isOpen && (
         <DropdownMenu>
           {options.map((item, index) => (
