@@ -81,6 +81,7 @@ const DropdownButton = styled.button`
 const Dropdown = () => {
   return (
     <DropdownWrapper>
+      {/* map으로 수정하기 */}
       <DropdownButton>사업자</DropdownButton>
     </DropdownWrapper>
   );
