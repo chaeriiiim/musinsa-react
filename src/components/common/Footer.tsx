@@ -70,6 +70,12 @@ const buttonList = [
   { label: "KIDS", path: "/" },
 ];
 
+const copyMenuList = [
+  { label: "개인정보처리방침", path: "#" },
+  { label: "이용약관", path: "#" },
+  { label: "결제대행 위탁사", path: "#" },
+];
+
 export default function Footer() {
   return (
     <FooterWrapper>
@@ -84,11 +90,14 @@ export default function Footer() {
         <FooterCopyTitle>@ MUSINSA ALL RIGHTS RESERVED</FooterCopyTitle>
 
         <FooterCopyLink>
-          <a href="#">개인정보처리방침</a>
-          <p>·</p>
-          <a href="#">이용약관</a>
-          <p>·</p>
-          <a href="#">결제대행 위탁사</a>
+          {copyMenuList.map((list, index) => (
+            <>
+              <a key={index} href={list.path}>
+                {list.label}
+              </a>
+              {index < copyMenuList.length - 1 && <p>·</p>}
+            </>
+          ))}
         </FooterCopyLink>
 
         <p style={{ color: "#8A8A8A", fontSize: "13px" }}>
