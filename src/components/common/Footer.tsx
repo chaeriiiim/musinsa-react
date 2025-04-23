@@ -57,6 +57,7 @@ export default function Footer() {
         style={{
           padding: "0px 16px",
           // marginBottom: "5px",
+          marginTop: "10px",
         }}
       >
         <p style={{ color: "#666666", fontSize: "13px", margin: "0px" }}>
@@ -67,7 +68,8 @@ export default function Footer() {
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            border: "1px solid red",
+            height: "18px",
+            marginTop: "10px",
           }}
         >
           <a href="#" style={{ color: "#666666", fontSize: "13px" }}>
