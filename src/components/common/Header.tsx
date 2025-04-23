@@ -70,6 +70,7 @@ const HeaderLine = styled.div`
 
 const MenuStyledLink = styled(Link)`
   font-weight: bold;
+  color: white;
 `;
 
 const mainMenuList = [
