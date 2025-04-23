@@ -4,12 +4,10 @@ import ArrowIcon from "../../assets/downArrow.svg";
 
 const DropdownWrapper = styled.div`
   width: 100%;
-  height: 36px;
 `;
 
 const DropdownButton = styled.button`
   width: 100%;
-  height: 36px;
   background-color: #f0f0f0;
   color: #666666;
   display: flex;

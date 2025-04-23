@@ -3,9 +3,11 @@ import Dropdown from "./DropdownButton";
 
 const FooterWrapper = styled.footer`
   width: 100%;
-  height: 366px;
+  // height: 366px;
   background-color: #f0f0f0;
   padding: 15px 0px 72px 0px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const FooterButtonWrapper = styled.div`
@@ -41,8 +43,6 @@ const buttonList = [
   { label: "KIDS", path: "/" },
 ];
 
-// const options = ["Option 1", "Option 2", "Option 3"];
-
 export default function Footer() {
   return (
     <FooterWrapper>
@@ -51,8 +51,37 @@ export default function Footer() {
           <FooterButton key={index}>{item.label}</FooterButton>
         ))}
       </FooterButtonWrapper>
-      <div>
-        <Dropdown />
+      <Dropdown />
+
+      <div
+        style={{
+          padding: "0px 16px",
+          // marginBottom: "5px",
+        }}
+      >
+        <p style={{ color: "#666666", fontSize: "13px", margin: "0px" }}>
+          @ MUSINSA ALL RIGHTS RESERVED
+        </p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            border: "1px solid red",
+          }}
+        >
+          <a href="#" style={{ color: "#666666", fontSize: "13px" }}>
+            개인정보처리방침
+          </a>
+          <p style={{ color: "#666666" }}>·</p>
+          <a href="#" style={{ color: "#666666", fontSize: "13px" }}>
+            이용약관
+          </a>
+          <p style={{ color: "#666666" }}>·</p>
+          <a href="#" style={{ color: "#666666", fontSize: "13px" }}>
+            결제대행 위탁사
+          </a>
+        </div>
       </div>
     </FooterWrapper>
   );
