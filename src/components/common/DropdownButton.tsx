@@ -61,6 +61,8 @@
 // };
 
 import styled from "styled-components";
+// import { useState } from "react";
+import ArrowIcon from "../../assets/downArrow.svg";
 
 const DropdownWrapper = styled.div`
   width: 100%;
@@ -79,10 +81,17 @@ const DropdownButton = styled.button`
 `;
 
 const Dropdown = () => {
+  // const [isOpen, setIsOpen] = useState(false);
   return (
     <DropdownWrapper>
-      {/* map으로 수정하기 */}
-      <DropdownButton>사업자</DropdownButton>
+      <DropdownButton>
+        <div style={{ display: "flex", justifyContent: "flex-start" }}>
+          <p>사업자</p>
+        </div>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <img src={ArrowIcon} alt="arrow_img" />
+        </div>
+      </DropdownButton>
     </DropdownWrapper>
   );
 };
