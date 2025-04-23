@@ -11,9 +11,10 @@ const DropdownWrapper = styled.div`
 const DropdownButton = styled.button`
   width: 100%;
   height: 36px;
-  // background-color: #f0f0f0;
+  background-color: #f0f0f0;
   color: #666666;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -25,13 +26,12 @@ const Dropdown = () => {
         <div
           style={{
             display: "flex",
-            justifyContent: "flex-start",
             width: "42px",
           }}
         >
           <p style={{ margin: "0px" }}>사업자</p>
         </div>
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <div>
           <img src={ArrowIcon} alt="arrow_img" />
         </div>
       </DropdownButton>
