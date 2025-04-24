@@ -10,7 +10,7 @@ const TitleWrapper = styled.div`
   width: 100%;
   height: 72px;
   padding: 12px 16px;
-  background-color: white;
+  background-color: ##f5f5f5;
   display: flex;
   align-items: center;
   justify-content: space-between;
