@@ -3,7 +3,7 @@ export default function CategoryButton() {
     <div
       style={{
         width: "100%",
-        height: "84px",
+        height: "116px",
         padding: "16px",
         backgroundColor: "#F5F5F5",
       }}
