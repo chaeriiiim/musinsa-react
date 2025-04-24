@@ -91,12 +91,10 @@ export default function Footer() {
 
         <FooterCopyLink>
           {copyMenuList.map((list, index) => (
-            <>
-              <a key={index} href={list.path}>
-                {list.label}
-              </a>
+            <div key={index}>
+              <a href={list.path}>{list.label}</a>
               {index < copyMenuList.length - 1 && <p>·</p>}
-            </>
+            </div>
           ))}
         </FooterCopyLink>
 
