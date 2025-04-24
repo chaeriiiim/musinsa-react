@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #f5f5f5;
     font-family: 'Pretendard', sans-serif;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     overflow-x: auto;
     font: inherit;
   }

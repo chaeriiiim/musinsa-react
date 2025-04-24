@@ -5,6 +5,7 @@ import Header from "./components/common/Header";
 import Main from "./pages/Main/Main";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
