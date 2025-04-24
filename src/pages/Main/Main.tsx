@@ -7,7 +7,11 @@ export default function Main() {
     <>
       <MainSlider />
       <CategoryButton />
-      <TitleSection />
+      <TitleSection
+        link="#"
+        title="스포츠 종목 아이템 추천"
+        subtitle="등산/아웃도어"
+      />
     </>
   );
 }

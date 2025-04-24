@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+interface TitleSectionProps {
+  link: string;
+  title: string;
+  subtitle: string;
+}
+
 const TitleWrapper = styled.div`
   width: 100%;
   height: 72px;
@@ -8,27 +14,28 @@ const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  & a {
+    font-size: 13px;
+    color: #666666;
+    text-decoration-line: underline;
+  }
 `;
 
-export default function TitleSection() {
+export default function TitleSection({
+  link,
+  title,
+  subtitle,
+}: TitleSectionProps) {
   return (
     <TitleWrapper>
       <p>
-        스포츠 종목 아이템 추천
+        {title}
         <br />
-        등산/아웃도어
+        {subtitle}
       </p>
 
-      <a
-        href="#"
-        style={{
-          fontSize: "13px",
-          color: "#666666",
-          textDecorationLine: "underline",
-        }}
-      >
-        더보기
-      </a>
+      <a href={link}>더보기</a>
     </TitleWrapper>
   );
 }
