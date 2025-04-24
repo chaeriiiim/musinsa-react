@@ -4,7 +4,15 @@ import Category_1 from "../../assets/category_1.jpg";
 import Category_10 from "../../assets/category_10.jpg";
 import Category_11 from "../../assets/category_11.jpg";
 import Category_12 from "../../assets/category_12.jpg";
+import Category_13 from "../../assets/category_13.jpg";
+import Category_14 from "../../assets/category_14.png";
+import Category_15 from "../../assets/category_15.png";
+import Category_16 from "../../assets/category_16.png";
+import Category_17 from "../../assets/category_17.png";
+import Category_18 from "../../assets/category_18.jpg";
+import Category_19 from "../../assets/category_19.png";
 import Category_2 from "../../assets/category_2.jpg";
+import Category_20 from "../../assets/category_20.png";
 import Category_3 from "../../assets/category_3.jpg";
 import Category_4 from "../../assets/category_4.jpg";
 import Category_5 from "../../assets/category_5.png";
@@ -58,6 +66,14 @@ const categoryList = [
   { src: Category_10, title: "오직 무신사 뷰티", path: "/" },
   { src: Category_11, title: "오프라인 웰컴데이", path: "/" },
   { src: Category_12, title: "어스 위크", path: "/" },
+  { src: Category_13, title: "브랜드 위크", path: "/" },
+  { src: Category_14, title: "타임세일", path: "/" },
+  { src: Category_15, title: "체험단", path: "/" },
+  { src: Category_16, title: "이벤트", path: "/" },
+  { src: Category_17, title: "무신사 개업식", path: "/" },
+  { src: Category_18, title: "무신사 매거진", path: "/" },
+  { src: Category_19, title: "무신사 어스", path: "/" },
+  { src: Category_20, title: "라이브", path: "/" },
 ];
 
 export default function CategoryButton() {
