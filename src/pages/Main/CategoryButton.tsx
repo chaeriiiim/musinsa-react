@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Category_1 from "../../assets/category_1.jpg";
+import Category_10 from "../../assets/category_10.jpg";
+import Category_11 from "../../assets/category_11.jpg";
+import Category_12 from "../../assets/category_12.jpg";
 import Category_2 from "../../assets/category_2.jpg";
 import Category_3 from "../../assets/category_3.jpg";
 import Category_4 from "../../assets/category_4.jpg";
 import Category_5 from "../../assets/category_5.png";
 import Category_6 from "../../assets/category_6.png";
+import Category_7 from "../../assets/category_7.jpg";
+import Category_8 from "../../assets/category_8.jpg";
+import Category_9 from "../../assets/category_9.jpg";
 
 const Root = styled.div`
   display: flex;
@@ -46,6 +52,12 @@ const categoryList = [
   { src: Category_4, title: "K리그 × 산리오", path: "/" },
   { src: Category_5, title: "여성 여름 신상", path: "/" },
   { src: Category_6, title: "고 팀 무신사", path: "/" },
+  { src: Category_7, title: "나이키 위크", path: "/" },
+  { src: Category_8, title: "어린이날 선물", path: "/" },
+  { src: Category_9, title: "여행 잡화 쿠폰", path: "/" },
+  { src: Category_10, title: "오직 무신사 뷰티", path: "/" },
+  { src: Category_11, title: "오프라인 웰컴데이", path: "/" },
+  { src: Category_12, title: "어스 위크", path: "/" },
 ];
 
 export default function CategoryButton() {
