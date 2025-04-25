@@ -1,9 +1,13 @@
+import Product_1 from "../../assets/product_1.webp";
+
 export default function ProductSlider() {
   return (
     <div style={{ height: "402px", width: "100%", backgroundColor: "#F5F5F5" }}>
       <div
         style={{ height: "312px", width: "260px", backgroundColor: "#E2E2E2" }}
-      ></div>
+      >
+        <img src={Product_1} style={{ width: "260px", height: "312px" }} />
+      </div>
 
       <div
         style={{
