@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-// import Slider from "react-slick";
 import styled from "styled-components";
-import Product_1 from "../../assets/product_1.webp";
-import Product_2 from "../../assets/product_2.webp";
 
 const Root = styled.div`
   height: 402px;
@@ -38,65 +35,57 @@ const ProductName = styled.p`
   font-size: 13px;
 `;
 
-const productList = [
-  {
-    path: "/",
-    img: Product_1,
-    brand: "엄브로",
-    productName: "클래식 윔업 바람막이 자켓 아이보리",
-    per: "60%",
-    price: "59,000원",
-  },
-  {
-    path: "/",
-    img: Product_2,
-    brand: "엄브로",
-    productName: "클래식 윔업 바람막이 자켓 아이보리",
-    per: "60%",
-    price: "59,000원",
-  },
-];
+const ProductItem = ({
+  product,
+}: {
+  product: {
+    img: string;
+    brand: string;
+    productName: string;
+    per: string;
+    price: string;
+    path: string;
+  };
+}) => (
+  <Link to={product.path}>
+    <ImgWrapper>
+      <img src={product.img} alt="제품 사진" />
+    </ImgWrapper>
 
-export default function ProductSlider() {
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidersToshow: 3,
-  //   sliderToScroll: 1,
-  // };
+    <ProductTitleWrapper>
+      <ProductBrand>{product.brand}</ProductBrand>
+      <ProductName>{product.productName}</ProductName>
+      <div>
+        <span style={{ fontSize: "13px", color: "red", fontWeight: "bold" }}>
+          {product.per}
+        </span>
+        <span
+          style={{ fontSize: "13px", marginLeft: "5px", fontWeight: "bold" }}
+        >
+          {product.price}
+        </span>
+      </div>
+    </ProductTitleWrapper>
+  </Link>
+);
+
+export default function ProductSlider({
+  productList,
+}: {
+  productList: {
+    path: string;
+    img: string;
+    brand: string;
+    productName: string;
+    per: string;
+    price: string;
+  }[];
+}) {
   return (
     <Root>
-      {/* <Slider {...settings}> */}
       {productList.map((product, index) => (
-        <Link to={product.path} key={index}>
-          <ImgWrapper>
-            <img src={product.img} alt="제품 사진" />
-          </ImgWrapper>
-
-          <ProductTitleWrapper>
-            <ProductBrand>{product.brand}</ProductBrand>
-            <ProductName>{product.productName}</ProductName>
-            <div>
-              <span
-                style={{ fontSize: "13px", color: "red", fontWeight: "bold" }}
-              >
-                {product.per}
-              </span>
-              <span
-                style={{
-                  fontSize: "13px",
-                  marginLeft: "5px",
-                  fontWeight: "bold",
-                }}
-              >
-                {product.price}
-              </span>
-            </div>
-          </ProductTitleWrapper>
-        </Link>
+        <ProductItem key={index} product={product} />
       ))}
-      {/* </Slider> */}
     </Root>
   );
 }
