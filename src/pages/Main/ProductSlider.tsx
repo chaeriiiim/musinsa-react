@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import Slider from "react-slick";
 import styled from "styled-components";
 import Product_1 from "../../assets/product_1.webp";
 import Product_2 from "../../assets/product_2.webp";
@@ -57,8 +58,16 @@ const productList = [
 ];
 
 export default function ProductSlider() {
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidersToshow: 3,
+  //   sliderToScroll: 1,
+  // };
   return (
     <Root>
+      {/* <Slider {...settings}> */}
       {productList.map((product, index) => (
         <Link to={product.path} key={index}>
           <ImgWrapper>
@@ -87,6 +96,7 @@ export default function ProductSlider() {
           </ProductTitleWrapper>
         </Link>
       ))}
+      {/* </Slider> */}
     </Root>
   );
 }
