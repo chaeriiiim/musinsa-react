@@ -14,6 +14,7 @@ export default function Main() {
         subtitle="등산/아웃도어"
       />
       <ProductList />
+      {/* 나머지 리스트 같이 묶어야하는지 알아보기 */}
     </>
   );
 }
