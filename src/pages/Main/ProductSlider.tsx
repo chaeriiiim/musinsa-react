@@ -2,11 +2,38 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import styled from "styled-components";
 
+const StyledSlider = styled(Slider)`
+  .slick-list {
+    margin: 0;
+    padding: 0 !important; /* ← slick-list의 padding 없애야 함 */
+  }
+
+  .slick-track {
+    margin: 0;
+    display: flex;
+    align-items: flex-start; /* ← 위아래 맞춰서 세워야 함 */
+  }
+
+  .slick-slide {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 260px !important;
+  }
+`;
+
 const Root = styled.div`
   height: 402px;
   width: 100%;
   background-color: #f5f5f5;
+  padding: 20px;
+`;
+
+const FlexWrapper = styled.div`
   display: flex;
+`;
+
+const SlideWrapper = styled.div`
+  width: 260px;
 `;
 
 const ImgWrapper = styled.div`
@@ -93,13 +120,27 @@ export default function ProductSlider({
     price: string;
   }[];
 }) {
+  const isSlider = productList.length > 5; // 6개 이상이면 슬라이더 켜기
+
   return (
     <Root>
-      <Slider {...settings}>
-        {productList.map((product, index) => (
-          <ProductItem key={index} product={product} />
-        ))}
-      </Slider>
+      {isSlider ? (
+        <StyledSlider {...settings}>
+          {productList.map((product, index) => (
+            <SlideWrapper key={index}>
+              <ProductItem product={product} />
+            </SlideWrapper>
+          ))}
+        </StyledSlider>
+      ) : (
+        <FlexWrapper>
+          {productList.map((product, index) => (
+            <SlideWrapper key={index}>
+              <ProductItem product={product} />
+            </SlideWrapper>
+          ))}
+        </FlexWrapper>
+      )}
     </Root>
   );
 }
