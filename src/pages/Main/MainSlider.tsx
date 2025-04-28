@@ -28,11 +28,24 @@ const MainSliderList = [
   },
 ];
 
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  autoplay: true,
+  arrows: true,
+};
+
 export default function MainSlider() {
   return (
-    <Slider>
-      <div style={{ display: "flex" }}>
-        {MainSliderList.map((item, index) => (
+    <Slider {...settings}>
+      {MainSliderList.map((item, index) => (
+        <div
+          key={index}
+          style={{ position: "relative", width: "480px", height: "480px" }}
+        >
           <Link
             style={{
               display: "flex",
@@ -40,7 +53,6 @@ export default function MainSlider() {
               width: "480px",
               height: "480px",
             }}
-            key={index}
             to={item.path}
           >
             <img src={item.src} style={{ width: "480px", height: "480px" }} />
@@ -74,8 +86,8 @@ export default function MainSlider() {
               </p>
             </div>
           </Link>
-        ))}
-      </div>
+        </div>
+      ))}
     </Slider>
   );
 }
