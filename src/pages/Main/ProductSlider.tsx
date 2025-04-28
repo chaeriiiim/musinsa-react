@@ -51,6 +51,7 @@ const ProductTitleWrapper = styled.div`
   width: 260px;
   line-height: 7px;
   padding: 8px;
+  line-height: 20px;
 `;
 
 const ProductBrand = styled.p`
