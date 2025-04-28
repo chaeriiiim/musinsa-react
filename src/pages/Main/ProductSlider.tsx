@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+// import Slider from "react-slick";
 import styled from "styled-components";
 
 const Root = styled.div`
@@ -35,6 +36,14 @@ const ProductName = styled.p`
   font-size: 13px;
 `;
 
+// const settings = {
+//   dots: true,
+//   infinite: true,
+//   speed: 500,
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+// };
+
 const ProductItem = ({
   product,
 }: {
@@ -47,6 +56,7 @@ const ProductItem = ({
     path: string;
   };
 }) => (
+  // <Slider {...settings}>
   <Link to={product.path}>
     <ImgWrapper>
       <img src={product.img} alt="제품 사진" />
@@ -67,6 +77,7 @@ const ProductItem = ({
       </div>
     </ProductTitleWrapper>
   </Link>
+  // </Slider>
 );
 
 export default function ProductSlider({

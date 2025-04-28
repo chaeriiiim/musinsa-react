@@ -2,8 +2,6 @@ import Product_1 from "../../assets/product_1.webp";
 import Product_2 from "../../assets/product_2.webp";
 import ProductSlider from "./ProductSlider";
 
-/* slick 알아보기 */
-
 const productList = [
   {
     path: "/",
