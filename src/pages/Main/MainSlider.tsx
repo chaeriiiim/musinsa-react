@@ -8,6 +8,14 @@ import MainSliderImg4 from "../../assets/main_img4.jpg";
 import MainSliderImg5 from "../../assets/main_img5.jpg";
 import MainSliderImg6 from "../../assets/main_img6.jpg";
 
+interface MainSliderItem {
+  src: string;
+  path: string;
+  title: string;
+  subtitle: string;
+  brand: string;
+}
+
 const MainSliderWrapper = styled.div`
   position: relative;
   width: 480px;
@@ -45,7 +53,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const MainSliderList = [
+const MainSliderList: MainSliderItem[] = [
   {
     src: MainSliderImg1,
     path: "#",
