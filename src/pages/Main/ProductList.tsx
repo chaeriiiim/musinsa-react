@@ -19,6 +19,38 @@ const productList = [
     per: "60%",
     price: "59,000원",
   },
+  {
+    path: "/",
+    img: Product_2,
+    brand: "엄브로",
+    productName: "클래식 윔업 바람막이 자켓 아이보리",
+    per: "60%",
+    price: "59,000원",
+  },
+  {
+    path: "/",
+    img: Product_2,
+    brand: "엄브로",
+    productName: "클래식 윔업 바람막이 자켓 아이보리",
+    per: "60%",
+    price: "59,000원",
+  },
+  {
+    path: "/",
+    img: Product_2,
+    brand: "엄브로",
+    productName: "클래식 윔업 바람막이 자켓 아이보리",
+    per: "60%",
+    price: "59,000원",
+  },
+  {
+    path: "/",
+    img: Product_2,
+    brand: "엄브로",
+    productName: "클래식 윔업 바람막이 자켓 아이보리",
+    per: "60%",
+    price: "59,000원",
+  },
 ];
 
 export default function App() {
