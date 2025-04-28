@@ -4,6 +4,9 @@ import styled from "styled-components";
 import MainSliderImg1 from "../../assets/main_img1.jpg";
 import MainSliderImg2 from "../../assets/main_img2.jpg";
 import MainSliderImg3 from "../../assets/main_img3.jpg";
+import MainSliderImg4 from "../../assets/main_img4.jpg";
+import MainSliderImg5 from "../../assets/main_img5.jpg";
+import MainSliderImg6 from "../../assets/main_img6.jpg";
 
 const MainSliderWrapper = styled.div`
   position: relative;
@@ -65,25 +68,25 @@ const MainSliderList = [
     brand: "시엔느",
   },
   {
-    src: MainSliderImg3,
+    src: MainSliderImg4,
     path: "#",
-    title: "여름맞이 신상",
+    title: "여름맞이 신상 라이브",
     subtitle: "15% 쿠폰 혜택",
-    brand: "무신사 스탠다드",
+    brand: "엘무드",
   },
   {
-    src: MainSliderImg3,
+    src: MainSliderImg5,
     path: "#",
-    title: "여름맞이 신상",
-    subtitle: "15% 쿠폰 혜택",
-    brand: "무신사 스탠다드",
+    title: "하루 특가",
+    subtitle: "최대 40% 할인",
+    brand: "나이키",
   },
   {
-    src: MainSliderImg3,
+    src: MainSliderImg6,
     path: "#",
-    title: "여름맞이 신상",
-    subtitle: "15% 쿠폰 혜택",
-    brand: "무신사 스탠다드",
+    title: "라이브 최대 혜택",
+    subtitle: "여성 여름 신상",
+    brand: "페인오어플레져",
   },
 ];
 
