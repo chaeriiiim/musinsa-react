@@ -1,8 +1,46 @@
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import styled from "styled-components";
 import MainSliderImg1 from "../../assets/main_img1.jpg";
 import MainSliderImg2 from "../../assets/main_img2.jpg";
 import MainSliderImg3 from "../../assets/main_img3.jpg";
+
+const MainSliderWrapper = styled.div`
+  position: relative;
+  width: 480px;
+  height: 480px;
+`;
+
+const MainSliderLink = styled(Link)`
+  display: flex;
+  align-items: flex-end;
+  width: 480px;
+  height: 480px;
+`;
+
+const MainSliderImg = styled.img`
+  width: 480px;
+  height: 480px;
+`;
+
+const TitleWrapper = styled.div`
+  position: absolute;
+  height: 120px;
+  margin-left: 10px;
+
+  p:first-child {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 28px;
+  }
+
+  p:nth-child(2) {
+    color: white;
+    font-size: 13px;
+  }
+`;
 
 const MainSliderList = [
   {
@@ -14,6 +52,27 @@ const MainSliderList = [
   },
   {
     src: MainSliderImg2,
+    path: "#",
+    title: "인기 데님 특별전",
+    subtitle: "최대 30% 할인",
+    brand: "모드나인",
+  },
+  {
+    src: MainSliderImg3,
+    path: "#",
+    title: "인기 아이템 모음",
+    subtitle: "20% 쿠폰 혜택",
+    brand: "시엔느",
+  },
+  {
+    src: MainSliderImg3,
+    path: "#",
+    title: "여름맞이 신상",
+    subtitle: "15% 쿠폰 혜택",
+    brand: "무신사 스탠다드",
+  },
+  {
+    src: MainSliderImg3,
     path: "#",
     title: "여름맞이 신상",
     subtitle: "15% 쿠폰 혜택",
@@ -30,63 +89,32 @@ const MainSliderList = [
 
 const settings = {
   dots: false,
-  infinite: false,
-  speed: 500,
+  infinite: true,
+  speed: 100,
   slidesToShow: 3,
   slidesToScroll: 3,
   autoplay: true,
-  arrows: true,
+  arrows: false,
+  draggable: true,
 };
 
 export default function MainSlider() {
   return (
     <Slider {...settings}>
       {MainSliderList.map((item, index) => (
-        <div
-          key={index}
-          style={{ position: "relative", width: "480px", height: "480px" }}
-        >
-          <Link
-            style={{
-              display: "flex",
-              alignItems: "flex-end",
-              width: "480px",
-              height: "480px",
-            }}
-            to={item.path}
-          >
-            <img src={item.src} style={{ width: "480px", height: "480px" }} />
-            <div
-              style={{
-                position: "absolute",
-                height: "120px",
-                marginLeft: "10px",
-              }}
-            >
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "22px",
-                  fontWeight: "bold",
-                  marginBottom: "10px",
-                }}
-              >
+        <MainSliderWrapper key={index}>
+          <MainSliderLink to={item.path}>
+            <MainSliderImg src={item.src} />
+            <TitleWrapper>
+              <p>
                 {item.title}
                 <br />
                 {item.subtitle}
               </p>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "13px",
-                  fontWeight: "bold",
-                }}
-              >
-                {item.brand}
-              </p>
-            </div>
-          </Link>
-        </div>
+              <p>{item.brand}</p>
+            </TitleWrapper>
+          </MainSliderLink>
+        </MainSliderWrapper>
       ))}
     </Slider>
   );
