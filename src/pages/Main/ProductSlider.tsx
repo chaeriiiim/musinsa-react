@@ -25,7 +25,6 @@ const Root = styled.div`
   height: 402px;
   width: 100%;
   background-color: #f5f5f5;
-  padding: 20px;
 `;
 
 const FlexWrapper = styled.div`
