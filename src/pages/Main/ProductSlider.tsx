@@ -119,8 +119,7 @@ export default function ProductSlider({
     price: string;
   }[];
 }) {
-  const isSlider = productList.length > 5; // 6개 이상이면 슬라이더 켜기
-
+  const isSlider = productList.length > 5;
   return (
     <Root>
       {isSlider ? (

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
 import MainSliderImg1 from "../../assets/main_img1.jpg";
 import MainSliderImg2 from "../../assets/main_img2.jpg";
 import MainSliderImg3 from "../../assets/main_img3.jpg";
@@ -29,50 +30,52 @@ const MainSliderList = [
 
 export default function MainSlider() {
   return (
-    <div style={{ display: "flex" }}>
-      {MainSliderList.map((item, index) => (
-        <Link
-          style={{
-            display: "flex",
-            alignItems: "flex-end",
-            width: "480px",
-            height: "480px",
-          }}
-          key={index}
-          to={item.path}
-        >
-          <img src={item.src} style={{ width: "480px", height: "480px" }} />
-          <div
+    <Slider>
+      <div style={{ display: "flex" }}>
+        {MainSliderList.map((item, index) => (
+          <Link
             style={{
-              position: "absolute",
-              height: "120px",
-              marginLeft: "10px",
+              display: "flex",
+              alignItems: "flex-end",
+              width: "480px",
+              height: "480px",
             }}
+            key={index}
+            to={item.path}
           >
-            <p
+            <img src={item.src} style={{ width: "480px", height: "480px" }} />
+            <div
               style={{
-                color: "white",
-                fontSize: "22px",
-                fontWeight: "bold",
-                marginBottom: "10px",
+                position: "absolute",
+                height: "120px",
+                marginLeft: "10px",
               }}
             >
-              {item.title}
-              <br />
-              {item.subtitle}
-            </p>
-            <p
-              style={{
-                color: "white",
-                fontSize: "13px",
-                fontWeight: "bold",
-              }}
-            >
-              {item.brand}
-            </p>
-          </div>
-        </Link>
-      ))}
-    </div>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "22px",
+                  fontWeight: "bold",
+                  marginBottom: "10px",
+                }}
+              >
+                {item.title}
+                <br />
+                {item.subtitle}
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "13px",
+                  fontWeight: "bold",
+                }}
+              >
+                {item.brand}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </Slider>
   );
 }
