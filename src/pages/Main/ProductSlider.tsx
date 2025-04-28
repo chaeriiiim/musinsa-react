@@ -68,7 +68,6 @@ const settings = {
   infinite: false,
   speed: 500,
   slidesToShow: 5,
-  slidesToScroll: 3,
   autoplay: false,
   arrows: true,
   draggable: true,
