@@ -1,3 +1,4 @@
+import Button from "../../components/common/button";
 import CategoryButton from "./CategoryButton";
 import MainSlider from "./MainSlider";
 import ProductList from "./ProductList";
@@ -14,7 +15,7 @@ export default function Main() {
         subtitle="등산/아웃도어"
       />
       <ProductList />
-      {/* 나머지 리스트 같이 묶어야하는지 알아보기 */}
+      <Button />
     </>
   );
 }
