@@ -1,36 +1,70 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ButtonImg from "../../assets/button_img.svg";
+
+interface ButtonProps {
+  width: string;
+  height: string;
+  backgroundColor: string;
+  text: string;
+  navigatePath: string;
+  icon?: string;
+}
 
 const Root = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const ButtonWrapper = styled.button`
-  height: 36px;
-  width: 600px;
-  background-color: #38b0f4;
+const ButtonWrapper = styled.button<{
+  $width: string;
+  $height: string;
+  $backgroundColor: string;
+}>`
+  width: ${({ $width }) => ($width ? $width : "auto")};
+  height: ${({ $height }) => ($height ? $height : "auto")};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  border: none;
 `;
 
-export default function Button() {
+const Text = styled.p`
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+const Icon = styled.img`
+  margin-right: 5px;
+`;
+
+export default function Button({
+  width = "",
+  height = "",
+  backgroundColor = "",
+  text,
+  navigatePath,
+  icon,
+}: ButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/");
+    navigate(navigatePath);
   };
 
   return (
     <Root>
-      <ButtonWrapper onClick={handleClick}>
-        <img src={ButtonImg} style={{ marginRight: "5px" }}></img>
-        <p style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>
-          무신사 플레이어에서 더보기
-        </p>
+      <ButtonWrapper
+        onClick={handleClick}
+        $width={width}
+        $height={height}
+        $backgroundColor={backgroundColor}
+      >
+        {icon && <Icon src={icon} alt="icon" />}
+        <Text>{text}</Text>
       </ButtonWrapper>
     </Root>
   );
