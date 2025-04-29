@@ -21,6 +21,7 @@ export default function Main() {
         subtitle="등산/아웃도어"
       />
       <ProductList />
+      <ProductList />
       <div style={{ marginTop: "12px" }}>
         <Button
           width="600px"
