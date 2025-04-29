@@ -21,14 +21,16 @@ export default function Main() {
         subtitle="등산/아웃도어"
       />
       <ProductList />
-      <Button
-        width="600px"
-        height="38px"
-        backgroundColor="#38B0F4"
-        icon={ButtonIcon}
-        text="무신사 플레이어에서 더보기"
-        navigatePath="/"
-      />
+      <div style={{ marginTop: "12px" }}>
+        <Button
+          width="600px"
+          height="38px"
+          backgroundColor="#38B0F4"
+          icon={ButtonIcon}
+          text="무신사 플레이어에서 더보기"
+          navigatePath="/"
+        />
+      </div>
     </Root>
   );
 }
