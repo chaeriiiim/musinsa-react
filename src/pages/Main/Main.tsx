@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ButtonIcon from "../../assets/button_img.svg";
 import Button from "../../components/common/button";
 import CategoryButton from "./CategoryButton";
 import MainSlider from "./MainSlider";
@@ -20,7 +21,14 @@ export default function Main() {
         subtitle="등산/아웃도어"
       />
       <ProductList />
-      <Button />
+      <Button
+        width="600px"
+        height="38px"
+        backgroundColor="#38B0F4"
+        icon={ButtonIcon}
+        text="무신사 플레이어에서 더보기"
+        navigatePath="/"
+      />
     </Root>
   );
 }
