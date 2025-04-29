@@ -93,12 +93,19 @@ const ProductItem = ({
       <ProductBrand>{product.brand}</ProductBrand>
       <ProductName>{product.productName}</ProductName>
       <div>
-        <span style={{ fontSize: "13px", color: "red", fontWeight: "bold" }}>
-          {product.per}
-        </span>
-        <span
-          style={{ fontSize: "13px", marginLeft: "5px", fontWeight: "bold" }}
-        >
+        {product.per && (
+          <span
+            style={{
+              fontSize: "13px",
+              color: "red",
+              fontWeight: "bold",
+              marginRight: "5px",
+            }}
+          >
+            {product.per}
+          </span>
+        )}
+        <span style={{ fontSize: "13px", fontWeight: "bold" }}>
           {product.price}
         </span>
       </div>
