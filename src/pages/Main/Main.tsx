@@ -1,12 +1,17 @@
+import styled from "styled-components";
 import Button from "../../components/common/button";
 import CategoryButton from "./CategoryButton";
 import MainSlider from "./MainSlider";
 import ProductList from "./ProductList";
 import TitleSection from "./TitleSection";
 
+const Root = styled.div`
+  background-color: #f5f5f5;
+`;
+
 export default function Main() {
   return (
-    <>
+    <Root>
       <MainSlider />
       <CategoryButton />
       <TitleSection
@@ -16,6 +21,6 @@ export default function Main() {
       />
       <ProductList />
       <Button />
-    </>
+    </Root>
   );
 }
