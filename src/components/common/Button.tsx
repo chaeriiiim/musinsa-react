@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import ButtonImg from "../../assets/button_img.svg";
 
@@ -6,7 +7,7 @@ const Root = styled.div`
   justify-content: center;
 `;
 
-const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.button`
   height: 36px;
   width: 600px;
   background-color: #38b0f4;
@@ -17,9 +18,15 @@ const ButtonWrapper = styled.div`
 `;
 
 export default function Button() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+  };
+
   return (
     <Root>
-      <ButtonWrapper>
+      <ButtonWrapper onClick={handleClick}>
         <img src={ButtonImg} style={{ marginRight: "5px" }}></img>
         <p style={{ color: "white", fontSize: "14px", fontWeight: "bold" }}>
           무신사 플레이어에서 더보기
