@@ -31,6 +31,7 @@ export default function Main() {
           text="무신사 플레이어에서 더보기"
           navigatePath="/"
         />
+        {/* 메인 map */}
       </div>
     </Root>
   );
